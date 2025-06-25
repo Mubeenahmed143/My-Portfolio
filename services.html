@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mubeen Ahmed Sheikh</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    
+
+    <!-- boxicons link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- custom link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- header design start -->
+
+    <header class="header">
+        <a href="#" class="logo">Mubeen Ahmed Sheikh</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+          <a href="index.html" >Home</a>
+          <a href="index.html#about">About</a>
+          <a href="services.html"class="active" >Services</a>
+          <a href="skills.html" >Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </header>
+    <!-- header end -->
+
+      <!-- services section design start -->
+<section class="services" id="services">
+    <h2 class="heading"><span>Services</span></h2>
+  
+    <div class="services-container">
+      <div class="services-box">
+        <i class='bx bx-code-alt'></i>
+        <h3>Website Development</h3>
+        <p>I build fast, responsive, and fully functional websites using HTML, CSS, JavaScript, PHP, and SQL.</p>
+        <a href="index.html#contact" class="btn">Contact Me</a>
+      </div>
+  
+      <div class="services-box">
+        <i class='bx bx-paint'></i>
+        <h3>Website Designing</h3>
+        <p>I design visually appealing and user-friendly web interfaces using modern UI/UX principles.</p>
+        <a href="index.html#contact" class="btn">Contact Me</a>
+      </div>
+  
+      <div class="services-box">
+        <i class='bx bx-mobile'></i>
+        <h3>Mobile App Development</h3>
+        <p>I develop cross-platform mobile apps using Flutter and Dart with Firebase or MongoDB as backend.</p>
+        <a href="index.html#contact" class="btn">Contact Me</a>
+      </div>
+  
+      <div class="services-box">
+        <i class='bx bx-customize'></i>
+        <h3>Customizing Websites</h3>
+        <p>I modify, upgrade, and enhance existing websites to meet specific business needs and branding.</p>
+        <a href="index.html#contact" class="btn">Contact Me</a>
+      </div>
+  
+      <div class="services-box">
+        <i class='bx bx-cog'></i>
+        <h3>Website Management</h3>
+        <p>I maintain and manage websites, ensuring smooth updates, backups, SEO optimization and performance.</p>
+        <a href="index.html#contact" class="btn">Contact Me</a>
+      </div>
+  
+      <div class="services-box">
+        <i class='bx bx-code-curly'></i>
+        <h3>Full Stack Development</h3>
+        <p>With knowledge of DotNet MVC, PHP, JavaScript, Firebase & MongoDB, I handle frontend + backend projects.</p>
+        <a href="index.html#contact" class="btn">Contact Me</a>
+      </div>
+    </div>
+  </section>
+  <!-- services section end -->
+  
+
+        <!-- footer section design start -->
+        <footer class="footer">
+            <div class="footer-text">
+                <p>
+                    Copyright &copy; 2024 by <span>{m@$} ||</span> All Right Reserved.
+                </p>
+            </div>
+            <div class="footer-iconTop">
+                <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+            </div>
+           </footer>
+
+           <!-- scroll reveal  -->
+           <script src="https://unpkg.com/scrollreveal"></script>
+
+           <!-- typed js -->
+           <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+           <!-- custom js link -->
+           <script src="./style.js"></script>
+
+           <script>
+            ScrollReveal({
+              reset: true,
+              distance: '60px',
+              duration: 1500,
+              delay: 100
+            });
+          
+            ScrollReveal().reveal('.heading', { delay: 200, origin: 'top' });
+            ScrollReveal().reveal('.services-container .services-box', {
+              interval: 200,
+              origin: 'bottom'
+            });
+          </script>
+          
+
+</body>
+</html>
