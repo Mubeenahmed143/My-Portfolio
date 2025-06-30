@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Detail - Mubeen's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1e1e2a;
+      color: #ffffff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .heading {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      color: #fff;
+    }
+    .heading span {
+      color: #00ffff;
+    }
+    .project-preview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #2b2d42;
+      border-radius: 15px;
+      overflow: hidden;
+      padding: 2rem;
+    }
+    .project-preview img {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+    .project-info {
+      max-width: 800px;
+      text-align: center;
+    }
+    .project-info h2 {
+      color: #00ffff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .project-info p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    .project-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .project-meta div {
+      background-color: #252836;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      color: #00ffff;
+      font-weight: bold;
+    }
+    .project-btn {
+      margin-top: 2rem;
+    }
+    .btn {
+      background-color: #00ffff;
+      color: #000;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #00cccc;
+    }
+    @media (max-width: 768px) {
+      .project-meta {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">Latest <span>Project</span></h1>
+
+    <div class="project-preview">
+      <img src="images/portfolio5.png" alt="Project Preview">
+      <div class="project-info">
+        <h2>Good Look Guaranteed - Elegance Barber Site</h2>
+        <p>This project is a professional, clean UI design for a modern men's salon. It features attractive layout, professional colors, smooth responsiveness and is ideal for personal service branding websites.</p>
+
+        <div class="project-meta">
+          <div><i class='bx bx-calendar'></i> May 2025</div>
+          <div><i class='bx bx-code-alt'></i> HTML, CSS, JavaScript</div>
+          <div><i class='bx bx-user'></i> Mubeen Ahmed Sheikh</div>
+        </div>
+
+        <div class="project-btn">
+          <a href="#" class="btn"><i class='bx bx-link-external'></i> Visit Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////// -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Detail - Mubeen's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .project-banner {
+      position: relative;
+      background: url('images/project-preview.jpg') no-repeat center center/cover;
+      height: 450px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: #fff;
+    }
+    .project-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .project-banner h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      color: #ffcc00;
+    }
+    .project-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    .project-description {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .project-sidebar {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .project-sidebar h3 {
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+    .project-sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .project-sidebar ul li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .project-sidebar ul li i {
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+    .btn {
+      display: inline-block;
+      background: #ffcc00;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #e6b800;
+    }
+    @media (max-width: 768px) {
+      .project-details {
+        grid-template-columns: 1fr;
+      }
+      .project-banner h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-banner">
+    <h1>Nonstop House Party Website</h1>
+  </div>
+
+  <div class="container">
+    <div class="project-details">
+      <div class="project-description">
+        <h2>Project Overview</h2>
+        <p>
+          This is a frontend demo design inspired by party mix videos on YouTube. The site replicates a video showcase style layout with tracklist, stylish background, and floating content. It’s a fully responsive and engaging project page for music or media-related portfolios.
+        </p>
+        <a href="#" class="btn"><i class='bx bx-link-external'></i> Visit Project</a>
+      </div>
+      <div class="project-sidebar">
+        <h3>Project Details</h3>
+        <ul>
+          <li><i class='bx bx-calendar'></i> June 2025</li>
+          <li><i class='bx bx-code-alt'></i> HTML, CSS, JavaScript</li>
+          <li><i class='bx bx-user'></i> Mubeen Ahmed Sheikh</li>
+          <li><i class='bx bx-devices'></i> Fully Responsive</li>
+          <li><i class='bx bx-music'></i> Ideal for Media/Music Projects</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////// -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Detail - Portfolio</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #111;
+      color: #fff;
+    }
+    .project-detail-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .thumbnail {
+      flex: 1 1 500px;
+      position: relative;
+      max-width: 600px;
+    }
+    .thumbnail img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .detail-info {
+      flex: 1 1 500px;
+      padding: 2rem;
+    }
+    .detail-info h2 {
+      font-size: 2.5rem;
+      color: #ffcc00;
+      margin-bottom: 1rem;
+    }
+    .detail-info p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tag {
+      background: #333;
+      border: 1px solid #666;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    .action-buttons {
+      margin-top: 1.5rem;
+    }
+    .btn {
+      padding: 0.8rem 1.5rem;
+      background: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      color: #000;
+      font-weight: bold;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #ffaa00;
+    }
+    @media (max-width: 768px) {
+      .project-detail-container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .detail-info {
+        padding: 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="project-detail-container">
+    <div class="thumbnail">
+      <img src="images/portfolio2.png" alt="Project Thumbnail">
+    </div>
+    <div class="detail-info">
+      <h2>Elegance Man's Salon - Web Design Project</h2>
+      <p>This project features a modern salon website built using HTML, CSS, JavaScript and some animations for better user experience. It includes responsive layout, service listings, booking form and gallery.</p>
+      <div class="project-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Responsive</span>
+      </div>
+      <div class="action-buttons">
+        <a href="#" class="btn">Live Preview</a>
+        <a href="#" class="btn">Source Code</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html> -->

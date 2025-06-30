@@ -346,6 +346,13 @@ span {
     font-size: 2rem;
     color: var(--second-bg-color);
 }
+
+.portfolio-btn-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
  /* portfolio section end  */
 
  /* contact section design start */
@@ -578,3 +585,5 @@ span {
 
   
 
+
+  
