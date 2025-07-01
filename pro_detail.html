@@ -1,4 +1,368 @@
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project • Mubeen Ahmed Sheikh</title>
+
+  <!-- ===== External libraries ===== -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- ===== Custom Styles matching skills‑page theme ===== -->
+  <style>
+    :root {
+      /* palette extracted from screenshot */
+      --bg-color: #1f242d;
+      --second-bg-color: #323946;
+      --text-color: #ffffff;
+      --main-color: #0ef; /* neon‑cyan highlight */
+      --accent-green: #00e38e; /* secondary accent seen on code icon */
+    }
+
+    /* ===== global resets ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* ===== Header / Navbar ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.2rem 8%;
+      background: var(--bg-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+    .header .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+    .header .navbar a {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-left: 2rem;
+      color: var(--text-color);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .header .navbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--main-color);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+    .header .navbar a:hover,
+    .header .navbar a.active {
+      color: var(--main-color);
+    }
+    .header .navbar a:hover::after,
+    .header .navbar a.active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    /* mobile menu icon */
+    #menu-icon {
+      font-size: 2rem;
+      color: var(--text-color);
+      cursor: pointer;
+      display: none;
+    }
+
+    /* ===== Main Container ===== */
+    section.popular-categories {
+      padding: 7rem 0 3rem; /* push below fixed header */
+    }
+
+    /* ===== Project Card ===== */
+    .project-wrapper {
+      background: var(--second-bg-color);
+      border-radius: 1.2rem;
+      padding: 2rem;
+      transition: transform 0.35s ease;
+    }
+    .project-wrapper:hover {
+      transform: translateY(-8px);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: #000;
+      border-radius: 0.8rem;
+    }
+    .video-container img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* overlay style adopting neon button */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      border-radius: inherit;
+    }
+    .video-container:hover .overlay {
+      opacity: 1;
+    }
+    .overlay .btn-live {
+      background: var(--main-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border-radius: 3rem;
+      text-decoration: none;
+      box-shadow: 0 0 1rem var(--main-color);
+      transition: transform 0.3s ease;
+    }
+    .overlay .btn-live:hover {
+      transform: scale(1.05);
+      color: var(--bg-color);
+    }
+
+    /* ===== Like Button ===== */
+    #likeButton {
+      background: transparent;
+      border: 2px solid var(--main-color);
+      color: var(--main-color);
+      border-radius: 50px;
+      transition: background 0.35s ease;
+    }
+    #likeButton:hover,
+    #likeButton.active {
+      background: var(--main-color);
+      color: var(--bg-color);
+      box-shadow: 0 0 0.8rem var(--main-color);
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      width: 100%;
+      padding: 1.5rem 8%;
+      background: var(--second-bg-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    .footer-text span {
+      color: var(--main-color);
+    }
+    .footer-iconTop a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--main-color);
+      padding: 0.6rem;
+      border-radius: 0.4rem;
+      color: var(--bg-color);
+      box-shadow: 0 0 0.8rem var(--main-color);
+    }
+    .footer-iconTop a:hover {
+      transform: translateY(-5px);
+    }
+
+    /* ===== Responsive breakpoints ===== */
+    @media (max-width: 991px) {
+      .header {
+        padding: 1rem 6%;
+      }
+      .header .navbar {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        transform: translateY(-100vh);
+        transition: transform 0.4s ease;
+      }
+      .header .navbar.active {
+        transform: translateY(0);
+      }
+      #menu-icon {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header (navigation) ===== -->
+  <header class="header">
+    <a href="#" class="logo">Mubeen Ahmed Sheikh</a>
+    <i class="bx bx-menu" id="menu-icon"></i>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="services.html">Services</a>
+      <a href="#" class="active">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== Main Section ===== -->
+  <section class="popular-categories">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <div class="project-wrapper">
+            <!-- ===== Author ===== -->
+            <a href="#" style="color: var(--text-color)">
+              <div class="d-flex align-items-center mb-3 gap-3">
+                <img
+                  src="images/icon.png"
+                  alt="User Avatar"
+                  class="rounded-circle"
+                  style="width: 38px; height: 38px"
+                />
+                <strong>Mubeen Ahmed</strong>
+              </div>
+            </a>
+
+            <!-- ===== Project image with overlay ===== -->
+            <div class="video-container mb-4">
+              <img src="images/portfolio5.png" alt="Project Screenshot" />
+              <div class="overlay">
+                <a href="#" class="btn-live" target="_blank"
+                  ><i class="bi bi-eye me-2"></i> Live Preview</a
+                >
+              </div>
+            </div>
+
+            <!-- ===== Title & Like ===== -->
+            <div class="d-flex align-items-center mb-2 flex-wrap gap-3">
+              <h3 class="me-auto m-0" style="color: var(--main-color)">Project Name</h3>
+
+              <button class="btn btn-sm" id="likeButton">
+                <i id="likeIcon" class="far fa-heart"></i>
+                <span id="likeCount">123</span>
+              </button>
+            </div>
+
+            <!-- ===== Description ===== -->
+            <p>
+              Here is a brief description of the project. All content is static —
+              feel free to replace it with your own text.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>
+        &copy; 2024 by <span>{m@$}</span> || All Rights Reserved.
+      </p>
+    </div>
+
+    <div class="footer-iconTop">
+      <a href="#top"><i class="bx bx-up-arrow-alt"></i></a>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // === mobile nav toggle ===
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.querySelector(".navbar");
+
+    menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+      menuIcon.classList.toggle("bx-x");
+    });
+
+    // === like Button ===
+    const likeBtn = document.getElementById("likeButton");
+    const likeIcon = document.getElementById("likeIcon");
+    const likeCount = document.getElementById("likeCount");
+
+    likeBtn.addEventListener("click", () => {
+      let count = parseInt(likeCount.textContent, 10);
+      const liked = likeIcon.classList.contains("fas");
+      if (!liked) {
+        likeIcon.classList.replace("far", "fas");
+        likeCount.textContent = count + 1;
+        likeBtn.classList.add("active");
+      } else {
+        likeIcon.classList.replace("fas", "far");
+        likeCount.textContent = count - 1;
+        likeBtn.classList.remove("active");
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+<!-- working continue //////////////////////////////////////////////////////////////////// -->
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -118,7 +482,7 @@
     </div>
   </div>
 </body>
-</html>
+</html> -->
 
 
 
